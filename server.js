@@ -1,8 +1,9 @@
 const express = require('express');
 const server = express();
-const Hubs = require('./hubs/hubs-model.js');
+const hubsRouter = require('./hubs/hubs-router');
 
 server.use(express.json());
+server.use('/api/hubs', hubsRouter);
 
 // endpoints
 server.get('/', (req, res) => {
